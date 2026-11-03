@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natal Solidário Guarapuava</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topo">
+        <a class="logo" href="index.html"> Natal Solidário </a>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#campanhas">Campanhas</a>
+            <a href="#ajuda">Como ajudar</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" id="inicio">
+            <div>
+                <p class="etiqueta">NATAL SOLIDÁRIO GUARAPUAVA</p>
+
+                <h1>Pequenos gestos podem transformar o Natal.</h1>
+
+                <p>
+                    Encontre campanhas e pontos de arrecadação
+                    de alimentos, roupas e brinquedos em Guarapuava.
+                </p>
+
+                <a class="botao" href="#campanhas">Como ajudar</a>
+
+                <a class="botao botao-secundario" href="#campanhas">
+                    Encontrar pontos de arrecadação
+                </a>
+            </div>
+        </section>
+
+        <section class="secao" id="campanhas">
+
+            <h2>Como você pode ajudar?</h2>
+
+            <p class="introducao">
+                Escolha uma categoria para encontrar os itens aceitos
+                e os pontos participantes.
+            </p>
+
+            <div class="filtros">
+                <button class="filtro ativo" data-filtro="todos">Todos</button>
+                <button class="filtro" data-filtro="alimentos">Alimentos</button>
+                <button class="filtro" data-filtro="roupas">Roupas</button>
+                <button class="filtro" data-filtro="brinquedos">Brinquedos</button>
+            </div>
+
+            <div class="cartoes">
+
+                <article class="cartao" data-categoria="alimentos">
+                    <div class="icone">🥫</div>
+                    <h3>Arrecadação de alimentos</h3>
+
+                    <p>
+                        Doação de alimentos não perecíveis
+                        para instituições participantes.
+                    </p>
+
+                    <p><strong>Itens:</strong> arroz, feijão, macarrão e óleo.</p>
+
+                    <a class="link" href="#detalhes">Ver detalhes</a>
+                </article>
+
+                <article class="cartao" data-categoria="roupas">
+                    <div class="icone">🧥</div>
+                    <h3>Campanha de roupas</h3>
+
+                    <p>
+                        Doação de roupas em bom estado
+                        para pessoas atendidas pelas instituições.
+                    </p>
+
+                    <p><strong>Itens:</strong> roupas limpas e em bom estado.</p>
+
+                    <a class="link" href="#detalhes">Ver detalhes</a>
+                </article>
+
+                <article class="cartao" data-categoria="brinquedos">
+                    <div class="icone">🧸</div>
+                    <h3>Arrecadação de brinquedos</h3>
+
+                    <p>
+                        Ajude a levar alegria às crianças neste Natal.
+                    </p>
+
+                    <p><strong>Itens:</strong> brinquedos novos ou em bom estado.</p>
+
+                    <a class="link" href="#detalhes">Ver detalhes</a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <section class="secao detalhes" id="detalhes">
+
+            <h2>Informações do ponto de arrecadação</h2>
+
+            <div class="cartao cartao-detalhes">
+
+                <h3>Instituição participante</h3>
+
+                <p><strong>Itens aceitos:</strong> consulte a descrição da campanha escolhida.</p>
+
+                <p><strong>Endereço:</strong> a confirmar com os organizadores.</p>
+
+                <p><strong>Horário:</strong> a confirmar com os organizadores.</p>
+
+                <p><strong>Período:</strong> a confirmar com os organizadores.</p>
+
+                <p class="aviso">
+                    As informações serão atualizadas após confirmação
+                    com os responsáveis.
+                </p>
+
+                <a class="botao" href="#campanhas">
+                    Voltar às campanhas
+                </a>
+
+            </div>
+        </section>
+        
+        <section class="secao ajuda" id="ajuda">
+
+            <h2>Precisa de assistência social?</h2>
+
+            <p>
+                O projeto divulga pontos de doação e não realiza
+                cadastro direto de famílias. Quem precisa de atendimento
+                pode procurar o CRAS ou a Secretaria de Assistência
+                e Desenvolvimento Social de Guarapuava.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Natal Solidário Guarapuava</p>
+        <p>Doe, participe e ajude a transformar o Natal.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
