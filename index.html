@@ -4,154 +4,313 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natal Solidário Guarapuava</title>
+    <title>Natal Solidário</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<header class="topo">
+    <a class="logo" href="index.html">Natal Solidário</a>
+    <nav>
+        <a href="#inicio">Início</a>
+        <a href="#campanhas">Campanhas</a>
+        <a href="#ajuda">Como ajudar</a>
+        <a href="#cidades">Cidades</a>
+        <a href="#midia">Mídia</a>
+        <a href="#historia">História</a>
+    </nav>
+</header>
+<main>
 
-    <header class="topo">
-        <a class="logo" href="index.html"> Natal Solidário </a>
-        <nav>
-            <a href="#inicio">Início</a>
-            <a href="#campanhas">Campanhas</a>
-            <a href="#ajuda">Como ajudar</a>
-        </nav>
-    </header>
+    <section class="hero" id="inicio">
+        <div>
+            <p class="etiqueta">NATAL SOLIDÁRIO GUARAPUAVA</p>
+            <h1>Pequenos gestos podem transformar o Natal.</h1>
+            <p> Encontre campanhas e pontos de arrecadação de alimentos, roupas e brinquedos. 
+                Email: contato@natalsolidario.com.br </p>
+            <a class="botao" href="#campanhas">Como ajudar</a>
+            <a class="botao botao-secundario" href="#campanhas">
+                Encontrar pontos de arrecadação </a>
+        </div>
 
-    <main>
 
-        <section class="hero" id="inicio">
+    </section>
+    <section class="secao" id="campanhas">
+        <h2>Como você pode ajudar?</h2>
+        <p class="introducao">
+            Escolha uma categoria para encontrar os itens
+            aceitos e os pontos participantes.
+        </p>
+        <div class="filtros">
+            <button class="filtro ativo" data-filtro="todos">Todos</button>
+            <button class="filtro" data-filtro="alimentos">Alimentos</button>
+            <button class="filtro" data-filtro="roupas">Roupas</button>
+            <button class="filtro" data-filtro="brinquedos">Brinquedos</button>
+        </div>
+
+
+        <div class="cartoes">
+            <article class="cartao" data-categoria="alimentos">
+                <div class="icone">🥫</div>
+                <h3>Arrecadação de alimentos</h3>
+                <p>Doação de alimentos não perecíveis para instituições participantes.</p>
+                <p><strong>Itens:</strong> arroz, feijão, macarrão e óleo.</p>
+                <a class="link" href="#detalhes">Ver detalhes</a>
+            </article>
+
+            <article class="cartao" data-categoria="roupas">
+                <div class="icone">👕</div>
+                <h3>Campanha de roupas</h3>
+                <p>Doação de roupas em bom estado para pessoas atendidas pelas instituições.</p>
+                <p><strong>Itens:</strong> roupas limpas e em bom estado.</p>
+                <a class="link" href="#detalhes">Ver detalhes</a>
+            </article>
+
+            <article class="cartao" data-categoria="brinquedos">
+                <div class="icone">🧸</div>
+                <h3>Arrecadação de brinquedos</h3>
+                <p>Ajude a levar alegria às crianças neste Natal.</p>
+                <p><strong>Itens:</strong> brinquedos novos ou em bom estado.</p>
+                <a class="link" href="#detalhes">Ver detalhes</a>
+            </article>
+        </div>
+    </section>
+    <section class="secao detalhes" id="detalhes">
+        <h2>Informações do ponto de arrecadação</h2>
+        <div class="cartao cartao-detalhes">
+            <h3>Instituição participante</h3>
+            <p><strong>Itens aceitos:</strong> consulte a descrição da campanha escolhida.</p>
+            <p><strong>Edições:</strong> Ponta Grossa PR (Edição 26) - Uruçuí PI (Edição 20) 
+                - Santo Ângelo RS (Edição 19) - Guarapuava PR (Edição 14) - Curitiba PR (Edição 4).</p>
+            <p><strong>Período:</strong> Guarapuava: 05 e 06 de dezembro </p>
+<p>Curitiba: 05 e 06 de dezembro</p> <p>Ponta Grossa: 13 de dezembro</p>
+            <p class="aviso">
+                As informações serão atualizadas após confirmação com os responsáveis.
+            </p>
+            <a class="botao" href="#campanhas">Voltar às campanhas</a>
+        </div>
+    </section>
+
+
+    <section class="secao ajuda" id="ajuda">
+        <h2>Precisa de assistência social?</h2>
+        <p>
+            O projeto divulga pontos de doação e não realiza cadastro
+            direto de famílias. Quem precisa de atendimento pode procurar
+            o CRAS ou a Secretaria de Assistência e Desenvolvimento Social
+            de Guarapuava.
+        </p>
+    </section>
+    <section class="secao" id="cidades">
+
+        <h2>Cidades participantes</h2>
+        <p class="introducao">
+            Conheça as cidades que fazem parte do Natal Solidário.
+            Selecione uma cidade para conferir suas informações.
+        </p>
+
+
+        <div class="filtros cidades-filtros">
+            <button class="filtro cidade-btn ativo" data-cidade="guarapuava">
+                Guarapuava
+            </button>
+            <button class="filtro cidade-btn" data-cidade="ponta-grossa">
+                Ponta Grossa
+            </button>
+            <button class="filtro cidade-btn" data-cidade="santo-angelo">
+                Santo Ângelo
+            </button>
+            <button class="filtro cidade-btn" data-cidade="urucui">
+                Uruçuí
+            </button>
+            <button class="filtro cidade-btn" data-cidade="curitiba">
+                Curitiba
+            </button>
+        </div>
+
+
+        <div class="cidade-conteudo ativo" id="guarapuava">
+            <h3>Guarapuava - PR</h3>
+            <div class="foto-vazia"></div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            </p>
+        </div>
+
+
+        <div class="cidade-conteudo" id="ponta-grossa">
+            <h3>Ponta Grossa - PR</h3>
+            <div class="foto-vazia"></div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            </p>
+        </div>
+
+
+        <div class="cidade-conteudo" id="santo-angelo">
+            <h3>Santo Ângelo - RS</h3>
+            <div class="foto-vazia"></div>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+        </div>
+
+
+        <div class="cidade-conteudo" id="urucui">
+            <h3>Uruçuí - PI</h3>
+            <div class="foto-vazia"></div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            </p>
+        </div>
+
+
+        <div class="cidade-conteudo" id="curitiba">
+            <h3>Curitiba - PR</h3>
+            <div class="foto-vazia"></div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Sed do eiusmod tempor incididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="secao" id="midia">
+        <h2>Mídia</h2>
+        <p class="introducao">
+            Confira registros, notícias e momentos das campanhas
+            do Natal Solidário.
+        </p>
+        <div class="cartoes midia-cartoes">
+            <article class="cartao">
+                <div class="foto-vazia"></div>
+                <h3>Galeria de fotos</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore.
+                </p>
+            </article>
+
+            <article class="cartao">
+                <div class="foto-vazia"></div>
+                <h3>Notícias</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore.
+                </p>
+            </article>
+
+            <article class="cartao">
+                <div class="foto-vazia"></div>
+                <h3>Vídeos</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Sed do eiusmod tempor incididunt ut labore.
+                </p>
+            </article>
+        </div>
+    </section>
+    <section class="secao" id="historia">
+        <h2>Nossa história</h2>
+        <div class="historia-conteudo">
+            <div class="foto-vazia"></div>
             <div>
-                <p class="etiqueta">NATAL SOLIDÁRIO GUARAPUAVA</p>
+                <h3>Sobre o Natal Solidário</h3>
+                 <p>
+                No Natal de 1999, nascia o Natal Solidário, na Paróquia Santo Antônio, 
+                em Cascavel (PR), a partir da união entre o Grupo de Jovens (JUPSA: Jovens unidos da Paróquia Santo Antônio),
+                amigos e empresas parceiras. A campanha ganhou as ruas logo em sua primeira edição: uma carreata marcante, 
+                com o Papai Noel conduzido no caminhão do Corpo de Bombeiros, apoio da Polícia Militar e dos agentes de trânsito, 
+                além de vários ônibus e inúmeros veículos que ajudaram a anunciar o propósito que surgia naquele momento
+                 — mobilizar pessoas para transformar o Natal de famílias em situação de vulnerabilidade. </p>
 
-                <h1>Pequenos gestos podem transformar o Natal.</h1>
+                 <p>Desde a sua concepção, a comunicação foi tratada como um pilar essencial da missão. 
+                Além do apoio ativo de rádios e jornais, o projeto inovou ao adotar cartazes, 
+                flyers e uma home page própria — um feito pioneiro para a época. 
+                o projeto consolidou recursos que evoluíram com a tecnologia com o uso de sites seguros e 
+                QR Codes que reafirmam essas ferramentas como pilares estratégicos da campanha.
+
+                Nos anos seguintes, o Natal Solidário também se expandiu e chegou a outras cidades: 
+                Ponta Grossa (PR), Guarapuava (PR), Santo Ângelo (RS), Giruá (RS) e Uruçuí (PI). Com o passar do tempo,
+                a ação foi descontinuada em Cascavel e Giruá, mantendo sua força e identidade nas demais frentes. </p>
+
+                <p>Um cuidado especial sempre acompanhou o projeto: 
+                o registro fiel de cada edição. Fotos e vídeos não são apenas memória
+                — são transparência, prestação de contas e testemunho vivo do caminho percorrido.
+                Esse zelo também se expressa na identidade visual e no acolhimento de quem faz o Natal Solidário acontecer. 
+                Desde a primeira edição, os voluntários recebem camisetas personalizadas com o Anjo Amoriel, mascote da campanha, 
+                e a logomarca oficial. Grupos escoteiros contam ainda com lenços e arganéis personalizados;
+                as cozinheiras recebem aventais; e, em algumas edições, bonés complementaram o uniforme. 
+                Mais do que padronização, esses itens representam pertencimento, reconhecimento e um “mimo”
+                carregado de gratidão pelo tempo doado e pelo trabalho realizado.</p>
+
+                <p> Ao longo dos anos, o Natal Solidário também ganhou voz por meio de muitos jingles, 
+                criados em diferentes estilos e com letras que acompanham os temas de cada edição, reforçando compromisso, 
+                valores e propósito da campanha. Com melodias singelas — simples, diretas e fáceis de memorizar — 
+                essas canções ajudam a emocionar, aproximar e manter viva a mensagem do “doar” como escolha que transforma.
+
+                Além disso, os jingles estão presentes nos vídeos que registram as diversas edições do projeto, 
+                embalando imagens reais das ações, das entregas e do trabalho das equipes. Nessa união entre som e imagem, 
+                a música conduz o ritmo da narrativa, fortalece a identidade do Natal Solidário e faz com que cada registro 
+                audiovisual seja, ao mesmo tempo, memória, transparência e convite para participar.</p>
 
                 <p>
-                    Encontre campanhas e pontos de arrecadação
-                    de alimentos, roupas e brinquedos em Guarapuava.
-                </p>
+                A campanha também marcou sua trajetória com momentos especiais de integração e divulgação.
+                Em 2003, foi realizado um show com o Padre Zezinho SCJ no Centro de Eventos, em Ponta Grossa.
+                Em 2010, a Banda Anjos de Resgate se apresentou no Colégio Marista, também em Ponta Grossa.
+                E em 2014, Guarapuava recebeu a Banda Rosa de Saron no Centro de Eventos Pahy, 
+                fortalecendo ainda mais a visibilidade e o vínculo comunitário do projeto. (Fotos no site).
 
-                <a class="botao" href="#campanhas">Como ajudar</a>
+                Ao longo dos anos, diversos artistas (Daniel, Chitãozinho e Xororó, Amado Batista, César Menotti e Fabiano,
+                Fátima Leão, Sérgio Reis, Teodoro e Sampaio para citar alguns) e personalidades gravaram mensagens
+                de incentivo e apoio ao Natal Solidário, ampliando o alcance da campanha e aproximando ainda mais o público da causa.
+                Esse tipo de participação voluntária fortalece a visibilidade, desperta interesse da mídia e contribui para a 
+                percepção de confiança e credibilidade do projeto. Mais do que “fama”, cada mensagem soma voz,
+                afeto e influência positiva — ajudando a transformar apoio em engajamento e engajamento em doação, 
+                essas mensagens também estão disponíveis no site oficial.</p>
 
-                <a class="botao botao-secundario" href="#campanhas">
-                    Encontrar pontos de arrecadação
-                </a>
+               <p> Ao longo desses 25 anos, a força do Natal Solidário sempre esteve nas pessoas. 
+               Grupos de jovens de diversas Paróquias, escoteiros, forças armadas, empresas e voluntários 
+               formam a base que impulsiona o projeto com eficiência, organização e espírito de serviço. 
+               Uma equipe de cozinheiras prepara o almoço para os voluntários, garantindo que quem doa seu dia também seja cuidado 
+               — porque solidariedade, aqui, é via de mão dupla.
+               Por ser um gesto cristão, o Natal Solidário nunca teve como prioridade transformar 
+               a campanha em números ou competir por estatísticas. Em vez disso, escolheu um caminho mais essencial:
+               mostrar, com verdade e sensibilidade, como cada doação é distribuída e de que forma ela chega a quem precisa.
+               O foco sempre foi a emoção, o carinho e a dedicação presentes em cada entrega, em cada visita, 
+               em cada abraço.
+               E há um aspecto que torna essa missão ainda mais profunda: o impacto não ocorre apenas em quem recebe.
+               A maioria dos participantes é formada por jovens, que vivenciam, na prática, lições de cidadania,
+               empatia e responsabilidade social. São experiências que educam o coração, formam valores e 
+               permanecem como aprendizado para a vida inteira. </p>
+
+               <p> Todo o registro histórico do projeto — fotos, vídeos e memórias de cada edição está disponível no site,
+               que pode ser acessado por estes endereços oficiais:
+               natalsolidario.com.br – natalsolidario.net – natalsolidario.com - natalsolidario.org </p>
+               <p>E-mail oficial: contato@natalsolidario.com.br </p>
+                
+               <p> A cada ano, a campanha também ganha um cartaz exclusivo de divulgação e novos materiais personalizados — 
+               camisetas e lenços escoteiros com o Anjo Amoriel — desenvolvidos para uso na edição vigente,
+               reforçando identidade, organização e unidade entre os voluntários. </p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="secao" id="campanhas">
+</main>
 
-            <h2>Como você pode ajudar?</h2>
+<footer>
+    <p>© 2026 Natal Solidário Guarapuava</p>
+    <p>Doe, participe e ajude a transformar o Natal.</p>
+</footer>
 
-            <p class="introducao">
-                Escolha uma categoria para encontrar os itens aceitos
-                e os pontos participantes.
-            </p>
-
-            <div class="filtros">
-                <button class="filtro ativo" data-filtro="todos">Todos</button>
-                <button class="filtro" data-filtro="alimentos">Alimentos</button>
-                <button class="filtro" data-filtro="roupas">Roupas</button>
-                <button class="filtro" data-filtro="brinquedos">Brinquedos</button>
-            </div>
-
-            <div class="cartoes">
-
-                <article class="cartao" data-categoria="alimentos">
-                    <div class="icone">🥫</div>
-                    <h3>Arrecadação de alimentos</h3>
-
-                    <p>
-                        Doação de alimentos não perecíveis
-                        para instituições participantes.
-                    </p>
-
-                    <p><strong>Itens:</strong> arroz, feijão, macarrão e óleo.</p>
-
-                    <a class="link" href="#detalhes">Ver detalhes</a>
-                </article>
-
-                <article class="cartao" data-categoria="roupas">
-                    <div class="icone">🧥</div>
-                    <h3>Campanha de roupas</h3>
-
-                    <p>
-                        Doação de roupas em bom estado
-                        para pessoas atendidas pelas instituições.
-                    </p>
-
-                    <p><strong>Itens:</strong> roupas limpas e em bom estado.</p>
-
-                    <a class="link" href="#detalhes">Ver detalhes</a>
-                </article>
-
-                <article class="cartao" data-categoria="brinquedos">
-                    <div class="icone">🧸</div>
-                    <h3>Arrecadação de brinquedos</h3>
-
-                    <p>
-                        Ajude a levar alegria às crianças neste Natal.
-                    </p>
-
-                    <p><strong>Itens:</strong> brinquedos novos ou em bom estado.</p>
-
-                    <a class="link" href="#detalhes">Ver detalhes</a>
-                </article>
-
-            </div>
-        </section>
-
-
-        <section class="secao detalhes" id="detalhes">
-
-            <h2>Informações do ponto de arrecadação</h2>
-
-            <div class="cartao cartao-detalhes">
-
-                <h3>Instituição participante</h3>
-
-                <p><strong>Itens aceitos:</strong> consulte a descrição da campanha escolhida.</p>
-
-                <p><strong>Endereço:</strong> a confirmar com os organizadores.</p>
-
-                <p><strong>Horário:</strong> a confirmar com os organizadores.</p>
-
-                <p><strong>Período:</strong> a confirmar com os organizadores.</p>
-
-                <p class="aviso">
-                    As informações serão atualizadas após confirmação
-                    com os responsáveis.
-                </p>
-
-                <a class="botao" href="#campanhas">
-                    Voltar às campanhas
-                </a>
-
-            </div>
-        </section>
-        
-        <section class="secao ajuda" id="ajuda">
-
-            <h2>Precisa de assistência social?</h2>
-
-            <p>
-                O projeto divulga pontos de doação e não realiza
-                cadastro direto de famílias. Quem precisa de atendimento
-                pode procurar o CRAS ou a Secretaria de Assistência
-                e Desenvolvimento Social de Guarapuava.
-            </p>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <p>© 2026 Natal Solidário Guarapuava</p>
-        <p>Doe, participe e ajude a transformar o Natal.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
