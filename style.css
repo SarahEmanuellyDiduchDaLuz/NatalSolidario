@@ -1,32 +1,486 @@
 
 :root {
     --verde: #1D7014;
+    --verde-escuro: #15530F;
     --vermelho: #D42714;
     --branco: #EFF3EE;
-    --cinza: #222222;
-    --cinza-claro: #CCD5CB;
-    
-.cidades-filtros {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 25px 0 30px;
+    --cinza-escuro: #222222;
+    --cinza-verde: #CCD5CB;
+    --branco-puro: #FFFFFF;
+
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --borda: 12px;
+    --transicao: 0.3s ease;
 }
 
-.cidade-btn {
-    transition: 0.3s;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: "Inter", Arial, sans-serif;
+    background-color: var(--branco);
+    color: var(--cinza-escuro);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--verde);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button,
+a,
+input,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--vermelho);
+    outline-offset: 3px;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+.pular-conteudo {
+    position: absolute;
+    top: -100px;
+    left: 15px;
+    z-index: 999;
+    padding: 10px 16px;
+    background: var(--verde);
+    color: white;
+    border-radius: 6px;
+}
+
+.pular-conteudo:focus {
+    top: 15px;
+}
+
+.topo {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 6%;
+    background-color: var(--cinza-escuro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--sombra);
+}
+
+.logo {
+    color: var(--branco-puro);
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    text-decoration: none;
+    color: #d9e8d5;
+}
+
+.topo nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.topo nav a {
+    color: var(--branco-puro);
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transicao);
+}
+
+.topo nav a:hover,
+.topo nav a.ativo {
+    color: #9bd18f;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    border: 1px solid var(--cinza-verde);
+    border-radius: 6px;
+    padding: 8px 12px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.hero {
+    min-height: 480px;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 55, 17, 0.94),
+            rgba(20, 55, 17, 0.72)
+        );
+    color: white;
+}
+
+.hero-conteudo {
+    max-width: 720px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: #c6e7bd;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    max-width: 650px;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.2;
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.hero-conteudo > p:not(.etiqueta) {
+    max-width: 600px;
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+
+.hero-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.botao,
+.botao-secundario,
+.botao-limpar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.botao {
+    background-color: var(--verde);
+    color: white;
+    border: 2px solid var(--verde);
+}
+
+.botao:hover {
+    background-color: var(--verde-escuro);
+    border-color: var(--verde-escuro);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    background-color: white;
+    color: var(--verde);
+    border: 2px solid white;
+}
+
+.botao-secundario:hover {
+    background-color: var(--branco);
+    color: var(--verde-escuro);
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+.botao-limpar {
+    margin-top: 15px;
+    color: var(--vermelho);
+    background: white;
+    border: 1px solid var(--vermelho);
+}
+
+.botao-limpar:hover {
+    background: var(--vermelho);
+    color: white;
+}
+
+.secao {
+    padding: 70px 7%;
+}
+
+.secao h2 {
+    color: var(--verde);
+    font-size: 27px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.introducao {
+    max-width: 800px;
+    font-size: 17px;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.cartao {
+    background: var(--branco-puro);
+    padding: 24px;
+    border-radius: var(--borda);
+    border: 1px solid #e1e8df;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+}
+
+.cartao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.11);
+}
+
+.cartao h3 {
+    color: var(--verde);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.cartao h4 {
+    color: var(--verde);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.cartao p {
+    margin-bottom: 13px;
+    font-size: 15px;
+}
+
+/* CAMPANHAS */
+.campanhas-cartoes {
+    align-items: stretch;
+}
+
+.cartao-campanha {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartao-campanha > p {
+    margin-bottom: 18px;
+}
+
+.campanha-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.icone {
+    background: #e5f0e2;
+    color: var(--verde);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.status {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.status.ativa {
+    background: #d8efda;
+    color: #206b27;
+}
+
+.status.futura {
+    background: #fff0cc;
+    color: #825b00;
+}
+
+.status.encerrada {
+    background: #f5d9d6;
+    color: #a32114;
+}
+
+.informacoes-campanha {
+    padding-top: 12px;
+    border-top: 1px solid var(--cinza-verde);
+    margin-top: auto;
+}
+
+.informacoes-campanha p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--verde);
+}
+
+.link:hover {
+    color: var(--verde-escuro);
+}
+
+.area-pesquisa {
+    background: white;
+    padding: 25px;
+    border-radius: var(--borda);
+    box-shadow: var(--sombra);
+    margin: 30px 0;
+}
+
+.area-pesquisa label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.area-pesquisa input,
+.area-pesquisa select {
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 13px;
+    border: 1px solid var(--cinza-verde);
+    border-radius: 7px;
+    background: white;
+    color: var(--cinza-escuro);
+}
+
+.area-pesquisa input:focus,
+.area-pesquisa select:focus {
+    border-color: var(--verde);
+    outline: 2px solid rgba(29, 112, 20, 0.15);
+}
+
+.filtros-campanhas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.filtro-grupo {
+    min-width: 0;
+}
+
+#resultado-pesquisa {
+    margin-top: 18px;
+    color: #555;
+    font-size: 14px;
+}
+
+.campanha-oculta {
+    display: none !important;
+}
+
+.aviso {
+    padding: 15px 18px;
+    margin-top: 22px;
+    background: var(--cinza-verde);
+    border-left: 4px solid var(--verde);
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.ajuda {
+    background: #e5ece3;
+}
+
+.ajuda .cartao {
+    border-top: 4px solid var(--verde);
+}
+
+.beneficiarios {
+    background: var(--branco);
+}
+
+.cartao-detalhes {
+    max-width: 950px;
+}
+
+.cartao-detalhes h3:not(:first-child) {
+    margin-top: 22px;
+}
+
+/* CIDADES */
+.cidades-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.filtro {
+    padding: 10px 18px;
+    background: white;
+    color: var(--verde);
+    border: 1px solid var(--verde);
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transicao);
+}
+
+.filtro:hover,
+.filtro.ativo {
+    background: var(--verde);
+    color: white;
 }
 
 .cidade-conteudo {
     display: none;
-    background: (--branco);
-    padding: 30px;
-    border-radius: 5px;
-    border: 1px solid (--branco);
-    max-width: 1000px;
-    margin: auto;
-    animation: aparecer 0.3s ease;
+    max-width: 950px;
+    animation: aparecer 0.35s ease;
 }
 
 .cidade-conteudo.ativo {
@@ -35,67 +489,12 @@
 
 .cidade-conteudo h3 {
     color: var(--verde);
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.cidade-conteudo p {
-    margin-top: 15px;
-    font-size: 15px;
-}
-
-.foto-vazia {
-    width: 100%;
-    height: 280px;
-    background: #D9DDDA;
-    border: 1px solid var(--cinza-claro);
-    border-radius: 5px;
+    font-size: 21px;
     margin: 15px 0;
 }
 
-.midia-cartoes {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.midia-cartoes .cartao {
-    transition: 0.3s;
-}
-
-.midia-cartoes .cartao:hover {
-    transform: translateY(-5px);
-}
-
-.midia-cartoes .foto-vazia {
-    height: 180px;
-    margin: 0 0 20px;
-}
-
-.historia-conteudo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-    align-items: center;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.historia-conteudo .foto-vazia {
-    height: 320px;
-    margin: 0;
-}
-
-.historia-conteudo h3 {
-    color: var(--verde);
-    font-size: 21px;
-    margin-bottom: 15px;
-}
-
-.historia-conteudo p {
-    margin-bottom: 15px;
-    font-size: 15px;
-    text-align: justify;
+.cidade-conteudo .cartao {
+    margin-top: 20px;
 }
 
 @keyframes aparecer {
@@ -110,36 +509,233 @@
     }
 }
 
+.foto-vazia {
+    width: 100%;
+    min-height: 180px;
+    background: linear-gradient(
+        135deg,
+        #dce7d9,
+        #c5d5c1
+    );
+    border-radius: 10px;
+    margin: 15px 0;
+    position: relative;
+    overflow: hidden;
+}
 
-@media (max-width: 768px) {
+.foto-vazia::after {
+    content: "Imagem do projeto";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #61745e;
+    font-size: 14px;
+}
 
-    .cidade-conteudo {
-        padding: 20px;
+.midia-cartoes .foto-vazia {
+    min-height: 190px;
+}
+
+.midia-cartoes .cartao {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.historia-conteudo {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 35px;
+    margin-top: 25px;
+}
+
+.historia-conteudo .foto-vazia {
+    min-height: 350px;
+    position: sticky;
+    top: 100px;
+}
+
+.historia-conteudo h3 {
+    color: var(--verde);
+    font-size: 19px;
+    margin: 25px 0 10px;
+}
+
+.historia-conteudo h3:first-child {
+    margin-top: 0;
+}
+
+.historia-conteudo p {
+    margin-bottom: 15px;
+}
+
+footer {
+    padding: 35px 7%;
+    text-align: center;
+    background: var(--cinza-escuro);
+    color: white;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 14px;
+}
+
+footer p:first-child {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+@media (max-width: 1000px) {
+    .topo {
+        padding: 15px 4%;
     }
 
-    .cidade-conteudo h3 {
-        font-size: 20px;
+    .topo nav {
+        gap: 12px;
     }
 
-    .foto-vazia {
-        height: 200px;
+    .topo nav a {
+        font-size: 13px;
     }
 
-    .midia-cartoes {
+    .cartoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .historia-conteudo {
+        grid-template-columns: 1fr 1.5fr;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .topo {
+        min-height: 68px;
+        flex-wrap: wrap;
+        padding: 12px 5%;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .topo nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding-top: 10px;
+    }
+
+    .topo nav.aberto {
+        display: flex;
+    }
+
+    .topo nav a {
+        width: 100%;
+        padding: 11px 0;
+        border-top: 1px solid #444;
+        font-size: 15px;
+    }
+
+    .hero {
+        min-height: 420px;
+        padding: 65px 7%;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-conteudo > p:not(.etiqueta) {
+        font-size: 16px;
+    }
+
+    .hero-botoes {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .secao {
+        padding: 50px 6%;
+    }
+
+    .secao h2 {
+        font-size: 23px;
+    }
+
+    .introducao {
+        font-size: 15px;
+    }
+
+    .cartoes {
         grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .filtros-campanhas {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .area-pesquisa {
+        padding: 18px;
+    }
+
+    .cidades-filtros {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filtro {
+        padding: 10px 8px;
+        font-size: 13px;
     }
 
     .historia-conteudo {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
 
     .historia-conteudo .foto-vazia {
-        height: 220px;
+        position: static;
+        min-height: 200px;
     }
 
-}
+    .cartao {
+        padding: 20px;
+    }
+
+    footer {
+        padding: 30px 6%;
+    }
 }
 
-<!-- os comentarios não estão funcionado aqui, dps lembrar de apagar esse negocio
-enfim, fiz algo de errado, esta feio e desarrumado, aplicar no wirefreme, e lembrar de trocar todas as fotos vazias-->
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
